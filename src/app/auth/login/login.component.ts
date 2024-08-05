@@ -54,7 +54,7 @@ export class LoginComponent {
 	private restproxy: RestProxyService
 	) {		
 		this.loginForm = new FormGroup({
-			username: new FormControl(this._username, [Validators.required]),
+			username: new FormControl(this._username, [Validators.required, Validators.email]),
 			password: new FormControl(this._password, [
 				Validators.required,
 				Validators.pattern(this.passwordPattern),
