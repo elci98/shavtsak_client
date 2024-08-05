@@ -1,0 +1,17 @@
+<mat-toolbar>
+  <mat-toolbar-row >
+    <div class="row-container">
+        <div class="menu">
+            <mat-icon>menu</mat-icon>
+        </div>
+        <div class="right-side">
+          @if (isloggedIn()) {
+            <button (click)="navigate('home')" mat-button> home</button>
+            <button (click)="navigate('someroute')" mat-button> someroute</button>
+            <button (click)="navigate('')" mat-button> Sign Out</button>
+          }
+          <span class="header-txt"> שבצק </span>
+        </div>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>

@@ -1,18 +1,42 @@
-<div class="container mt-5">
-  <div class="row justify-content-center">
-    <div class="col-sm-12 col-md-6 mt-5">
-      <div class="card p-5 shadow p-3 mb-5 bg-body rounded">
-        <div class="card-body text-center">
-          <h4 class="card-title lead mb-4">Login with Google</h4>
-          <p class="card-text mb-4">
-            Hi, login with your Google account to continue.
-          </p>
-          <p class="align-self-center bg-light">
-            <asl-google-signin-button type='standard' size='large' text="continue_with" shape="square"
-              logo_alignment="left" class="mb-5"></asl-google-signin-button>
-          </p>
+<div class="login container">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title> SHAVTSAK </mat-card-title>
+      <mat-card-subtitle> soldiers Managment</mat-card-subtitle>
+      <img src="assets/logo.png" matCardAvatar />
+    </mat-card-header>
+    <mat-card-content [formGroup]="loginForm">
+      <mat-form-field appearance="outline">
+        <mat-label>
+          שם משתמש
+        </mat-label>
+        <input formControlName="username" type="text" class="label" matInput />
+        <mat-icon *ngIf="username?.touched && username?.errors"> error</mat-icon>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>סיסמא</mat-label>
+        <input [errorStateMatcher]="error" formControlName="password" type="password" class="label" matInput />
+        <mat-icon *ngIf="password?.touched && password?.errors" > error</mat-icon>
+      </mat-form-field>
+    </mat-card-content>
+    <mat-card-actions>
+      <div class="btns container">
+        <div class="login-register container">
+          <button [disabled]="!formValid" mat-stroked-button (click)="onLoginClicked()">Login</button>
+          <button mat-stroked-button (click)="onRegisterClicked()">Register</button>
         </div>
+        <asl-google-signin-button
+        type="standard"
+        size="large"
+          text="signin_with"
+          shape="square"
+          logo_alignment="left"
+          class="mb-5"
+        ></asl-google-signin-button>
       </div>
-    </div>
-  </div>
+    </mat-card-actions>
+    <mat-card-footer>
+      <mat-error>{{errorMessage()}}</mat-error>
+    </mat-card-footer>
+  </mat-card>
 </div>

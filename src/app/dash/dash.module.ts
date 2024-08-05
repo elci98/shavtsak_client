@@ -5,10 +5,10 @@ import { DashRoutingModule } from './dash-routing.module';
 
 
 @NgModule({
-  declarations: [],
-  imports: [
-    CommonModule,
-    DashRoutingModule
-  ]
+	declarations: [],
+	imports: [
+		CommonModule,
+		DashRoutingModule
+	]
 })
 export class DashModule { }

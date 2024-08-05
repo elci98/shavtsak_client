@@ -7,21 +7,23 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { GoogleSigninButtonModule, SocialLoginModule } from '@abacritt/angularx-social-login';
 import { provideHttpClient } from '@angular/common/http';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
-    declarations: [
-        LoginComponent,
-    ],
-    providers: [
-        provideHttpClient()
-    ],
-    imports: [
-        CommonModule,
-        AuthRoutingModule,
-        RouterModule,
-        FormsModule,
-        SocialLoginModule,
-        GoogleSigninButtonModule,
-    ]
+	declarations: [
+	],
+	providers: [
+		provideHttpClient()
+	],
+	imports: [
+		LoginComponent,
+		RegisterComponent,
+		CommonModule,
+		AuthRoutingModule,
+		RouterModule,
+		FormsModule,
+		SocialLoginModule,
+		GoogleSigninButtonModule,
+	]
 })
 export class AuthModule { }

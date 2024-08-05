@@ -1,0 +1,19 @@
+mat-toolbar{
+    background-color: #7b1fa2;
+
+}
+.row-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 98%;
+
+    .right-side{
+        display: flex;
+        align-items: center;
+        .header-txt{
+            font-weight: 700;
+        }
+
+    }
+}
