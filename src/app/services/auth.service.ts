@@ -74,7 +74,7 @@ export class AuthService {
 		const currentTime = new Date().getTime();
 		const tokenDuration =  15 * 60 * 1000; // 15 minutes in milliseconds
 
-		if ((token && tokenTime) == null) {
+		if (token && tokenTime) {
 			const timeDiff = currentTime - Number(tokenTime);
 			if (timeDiff > tokenDuration) {
 				localStorage.clear();
